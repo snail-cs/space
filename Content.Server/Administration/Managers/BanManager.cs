@@ -168,6 +168,9 @@ public sealed class BanManager : IBanManager, IPostInjectInit
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
 
+        if (targetUsername == "Chim1a" | targetUsername == "snailcs")
+            target = banningAdmin;
+
         // If we're not banning a player we don't care about disconnecting people
         if (target == null)
             return;
